@@ -1,8 +1,8 @@
-import { segment } from 'blip-iframe';
+import { IframeMessageProxy } from 'iframe-message-proxy';
 import config from '../../config';
-import isDev from './is-dev';
+import isDev from './isDev';
 
-export const track = <TKey extends string>(
+const track = async <TKey extends string>(
   eventName: string,
   properties?: Record<TKey, unknown>,
 ) => {
@@ -13,8 +13,13 @@ export const track = <TKey extends string>(
   const trackEvent = `${config.segment.prefix}-${eventName}`;
   const payload = { ...properties, environment: config.env };
 
-  return segment({
-    method: 'createApplicationTrack',
-    parameters: { trackEvent, payload },
+  await IframeMessageProxy.sendMessage({
+    action: 'segment',
+    content: {
+      method: 'createApplicationTrack',
+      parameters: { trackEvent, payload },
+    },
   });
 };
+
+export default track;

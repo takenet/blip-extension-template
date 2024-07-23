@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ template "blip-extension-template.fullname" . }}-{{ .Values.environment.stage }}
+  labels:
+    app: {{ template "blip-extension-template.name" . }}
+    chart: {{ template "blip-extension-template.chart" . }}
+    draft: {{ default "draft-app" .Values.draft }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    team: csgrowth
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ template "blip-extension-template.fullname" . }}-{{ .Values.environment.stage }}
+  minReplicas: {{ .Values.autoscale.minReplicas }}
+  maxReplicas: {{ .Values.autoscale.maxReplicas }}
+  targetCPUUtilizationPercentage: {{ .Values.autoscale.averageCPUUtilization }}

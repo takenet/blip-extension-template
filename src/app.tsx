@@ -1,12 +1,12 @@
-import { Metrics } from 'Metrics';
-// import { Home } from 'pages/home';
-import { Providers } from 'providers';
+import { Suspense } from 'react';
+import Routes from './Routes';
 
-export default function App() {
+const App = () => {
   return (
-    <Providers>
-      {/* <Home /> */}
-      <Metrics />
-    </Providers>
+    <Suspense fallback={<bds-loading-page />}>
+      <Routes />
+    </Suspense>
   );
-}
+};
+
+export default App;

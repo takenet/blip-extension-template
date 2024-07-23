@@ -8,15 +8,14 @@ resources:
     - repository: templates
       type: git
       name: Operações/template-take-blip
-      ref: refs/tags/v1.4.49
+      ref: refs/tags/v1.4.48
 
 variables:
   BuildCounter: $[counter('buildCounter',1)]
   sonarQubeTags: $(Build.Repository.Name)
   sonarQubeKey: $(Build.Repository.Name)
   sonarQubeName: $(Build.Repository.Name)
-  framework: 'javascript'
-  formatAppSettingsBeforeDelivery: true
+  framework: 'react'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -28,14 +27,13 @@ extends:
     to: 'kubernetes'
     packagename: $(Build.Repository.Name)
     BuildCounter: $(BuildCounter)
-    nodeVersion: '^18.18.0'
+    nodeVersion: '18.16.0'
     createZipPackage: true
     buildArtifactsDir: 'build'
     npmCmds:
       - 'npm cache clean --force'
       - 'npm install'
-      - 'ls'
-      - 'ls src'
+      - 'npm run test:coverage'
       - 'npm run build'
     stages:
       - name: staging

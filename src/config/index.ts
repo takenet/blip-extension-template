@@ -1,4 +1,4 @@
-import isDev from 'lib/utils/is-dev';
+import isDev from '../lib/utils/isDev';
 import productionConfig from './appsettings.json';
 
 export type Config = typeof productionConfig;
