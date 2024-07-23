@@ -1,0 +1,17 @@
+{
+  "errorPage": {
+    "defaultStatus": "Error desconocido",
+    "defaultStatusText": "Ha ocurrido un error desconocido."
+  },
+  "header": {
+    "information": "Una extensión de Blip es una forma de conectar funciones no oficiales para mejorar las capacidades del portal.",
+    "title": "Template de Extensión"
+  },
+  "home": {
+    "button-count_one": "Botón presionado {{ count }} vez",
+    "button-count_other": "Botón presionado {{ count }} veces",
+    "button-count_zero": "Botón presionado {{ count }} veces",
+    "subtitle": "Edite <codeBlock> src/pages/Home/Home.tsx </codeBlock> y guarde para recargar.",
+    "title": "Esta es una plantilla de extensión básica"
+  }
+}

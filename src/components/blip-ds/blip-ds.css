@@ -1,0 +1,30 @@
+:root {
+  --color-primary: 218deg 88% 53%;
+  --color-primary-50: 210deg 100% 97%;
+  --color-primary-100: 211deg 100% 93%;
+  --color-primary-200: 210deg 100% 87%;
+  --color-primary-300: 208deg 100% 78%;
+  --color-primary-400: 210deg 100% 68%;
+  --color-primary-500: 214deg 97% 60%;
+  --color-primary-600: 218deg 88% 53%;
+  --color-primary-700: 221deg 81% 48%;
+  --color-primary-800: 223deg 75% 40%;
+  --color-primary-900: 222deg 68% 33%;
+  --color-primary-950: 223deg 61% 21%;
+
+  --color-gray-50: 0deg 0% 96%;
+  --color-gray-100: 0deg 0% 91%;
+  --color-gray-200: 0deg 0% 82%;
+  --color-gray-300: 0deg 0% 69%;
+  --color-gray-400: 0deg 0% 53%;
+  --color-gray-500: 0deg 0% 43%;
+  --color-gray-600: 0deg 0% 36%;
+  --color-gray-700: 0deg 0% 31%;
+  --color-gray-800: 0deg 0% 27%;
+  --color-gray-900: 0deg 0% 24%;
+  --color-gray-950: 0deg 0% 15%;
+}
+
+.mantine-active:active {
+  transform: none;
+}

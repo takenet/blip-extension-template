@@ -1,0 +1,54 @@
+trigger:
+  - master
+  - main
+  - develop
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Operações/template-take-blip
+      ref: refs/tags/v1.4.49
+
+variables:
+  BuildCounter: $[counter('buildCounter',1)]
+  sonarQubeTags: $(Build.Repository.Name)
+  sonarQubeKey: $(Build.Repository.Name)
+  sonarQubeName: $(Build.Repository.Name)
+  framework: 'javascript'
+  formatAppSettingsBeforeDelivery: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+extends:
+  template: 'template-pipeline.yml@templates'
+  parameters:
+    type: 'javascript'
+    to: 'kubernetes'
+    packagename: $(Build.Repository.Name)
+    BuildCounter: $(BuildCounter)
+    nodeVersion: '^18.18.0'
+    createZipPackage: true
+    buildArtifactsDir: 'build'
+    npmCmds:
+      - 'npm cache clean --force'
+      - 'npm install'
+      - 'ls'
+      - 'ls src'
+      - 'npm run build'
+    stages:
+      - name: staging
+        condition: and(or(ne(variables['build.sourceBranchName'], 'master'), ne(variables['build.sourceBranchName'], 'main')), ne(variables['Build.Reason'], 'PullRequest'))
+        dependsOn: build
+        environment: staging
+        ServiceConnection: 'AKS BOT BETA-STAGING-$(System.TeamProject)'
+        # Add Key Vaults' variable groups here
+        variables: []
+      - name: production
+        condition: and(or(eq(variables['build.sourceBranchName'], 'master'), eq(variables['build.sourceBranchName'], 'main')), ne(variables['Build.Reason'], 'PullRequest'))
+        dependsOn: staging
+        environment: production
+        # Add Key Vaults' variable groups here
+        variables: []
+        ServiceConnection: 'AKS BOT PROD-$(System.TeamProject)'

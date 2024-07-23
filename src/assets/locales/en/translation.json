@@ -1,0 +1,17 @@
+{
+  "errorPage": {
+    "defaultStatus": "Unknown error",
+    "defaultStatusText": "An unknown error has occurred."
+  },
+  "header": {
+    "information": "A Blip extension it's a technology-agnostic way to plug unofficial features to enhance the portal capabilities.",
+    "title": "Extension Template"
+  },
+  "home": {
+    "button-count_one": "Button clicked {{ count }} time",
+    "button-count_other": "Button clicked {{ count }} times",
+    "button-count_zero": "Button clicked {{ count }} times",
+    "subtitle": "Edit <codeBlock> src/pages/Home/Home.tsx </codeBlock> and save to reload.",
+    "title": "This is a basic plugin template."
+  }
+}

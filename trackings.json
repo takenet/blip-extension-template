@@ -1,0 +1,115 @@
+{
+  "extension": "blip-extension-data-tables",
+  "label": "Blip Data Tables",
+  "trackings": {
+    "bug-report": {
+      "description": "Ocorre quando o usuário relata um bug",
+      "properties": {
+        "allowContact": {
+          "description": "Indica se o usuário permitiu que desenvolvedores entrem em contato",
+          "type": "boolean"
+        },
+        "message": {
+          "description": "A descrição do bug fornecida pelo usuário",
+          "type": "string"
+        }
+      }
+    },
+    "change-color-scheme": {
+      "description": "User changed the color scheme",
+      "properties": {
+        "scheme": {
+          "description": "The color scheme the user changed to (light, dark or auto)",
+          "type": "string"
+        }
+      }
+    },
+    "click-fetch-more": {
+      "description": "Ocorre quando o usuário clica no botão para buscar mais itens",
+      "properties": {
+        "itemsCount": {
+          "description": "O número de itens exibidos atualmente",
+          "type": "number"
+        }
+      }
+    },
+    "data-request": {
+      "description": "Ocorre quando o usuário solicita novos dados",
+      "properties": {
+        "message": {
+          "description": "A descrição dos dados solicitados pelo usuário",
+          "type": "string"
+        }
+      }
+    },
+    "export-pdf-error": {
+      "description": "Ocorre quando ocorre um erro ao exportar uma tabela arquivo para PDF",
+      "properties": {
+        "tableName": {
+          "description": "O nome da tabela que o usuário tentou exportar. Algo como `tickets` ou `attendants`",
+          "type": "string"
+        }
+      }
+    },
+    "export-table": {
+      "description": "Ocorre quando o usuário exporta uma tabela",
+      "properties": {
+        "format": {
+          "description": "O formato em que a tabela é exportada. Pode ser `csv`, `json` ou `pdf`",
+          "type": "string"
+        },
+        "tableName": {
+          "description": "O nome da tabela",
+          "type": "string"
+        }
+      }
+    },
+    "feedback": {
+      "description": "Ocorre quando o usuário envia um feedback",
+      "properties": {
+        "message": {
+          "description": "Texto do feedback",
+          "type": "string"
+        }
+      }
+    },
+    "interacted-with-filter-form": {
+      "description": "Ocorre apenas na primeira interação do usuário com um formulário de filtro. Caso o usuário interaja mais de uma vez com o formulário na mesma sessão, apenas um evento é enviado. Caso o mesmo usuário interaja com o formulário em sessões diferentes (ex.: Página recarregada), um evento é enviado para cada sessão",
+      "properties": {
+        "tableName": {
+          "description": "O nome da tabela associada ao formulário de filtro",
+          "type": "string"
+        }
+      }
+    },
+    "opened": {
+      "description": "Ocorre quando a extensão é aberta"
+    },
+    "page-opened": {
+      "description": "Ocorre quando qualquer página é carregada. A página é especificada pela propriedade `pathname`",
+      "properties": {
+        "pathname": {
+          "description": "Caminho da página. Ex: `tickets` ou `attendants`",
+          "type": "string"
+        },
+        "state": {
+          "description": "Estado da página. Pode ser qualquer coisa, mas raramente é definido",
+          "type": "unknown"
+        }
+      }
+    },
+    "query-error": {
+      "description": "Ocorre quando ocorre um erro ao realizar uma consulta",
+      "properties": {
+        "error": {
+          "description": "O objeto de erro serializado",
+          "type": "object"
+        },
+        "queryKey": {
+          "description": "A chave da consulta que resultou no erro",
+          "type": "array"
+        }
+      }
+    }
+  }
+}

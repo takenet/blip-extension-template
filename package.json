@@ -1,0 +1,208 @@
+{
+  "name": "blip-extension-data-tables",
+  "version": "1.2.0",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "check": "npm run lint:fix && npm run format && npm run spell && npm run build && npm run test:coverage && npm run test:result",
+    "cypress": "cypress open --component",
+    "dev": "npm run start",
+    "eject": "react-scripts eject",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "spell": "cspell lint .",
+    "start": "react-scripts start",
+    "test": "npm run test:cypress",
+    "test:coverage": "npm run test",
+    "test:cypress": "cypress run --component",
+    "test:result": "nyc report --reporter=text && nyc report --reporter=text-summary"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "./src/**/*.*": "prettier --write",
+    "./src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": "@vercel/style-guide/prettier",
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "cypress/**/*.*",
+      "**/*.d.ts",
+      "**/*.cy.tsx",
+      "**/*.cy.ts"
+    ],
+    "include": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ]
+  },
+  "dependencies": {
+    "@blip-ds/react-icons": "^0.0.2",
+    "@fontsource/nunito-sans": "^5.0.8",
+    "@hookform/resolvers": "^3.3.4",
+    "@mantine/charts": "^7.11.2",
+    "@mantine/core": "^7.11.2",
+    "@mantine/dates": "^7.11.2",
+    "@mantine/form": "^7.11.2",
+    "@mantine/hooks": "^7.11.2",
+    "@mantine/notifications": "^7.7.1",
+    "@microlink/react-json-view": "^1.23.0",
+    "@phosphor-icons/react": "^2.0.15",
+    "@tabler/icons-react": "^2.45.0",
+    "@tanstack/react-query": "^5.17.9",
+    "@tanstack/react-query-devtools": "^5.40.1",
+    "ag-grid-community": "^31.0.1",
+    "ag-grid-react": "^31.0.1",
+    "blip-iframe": "^1.7.4",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "iframe-message-proxy": "^1.2.0",
+    "lime-transport-websocket": "^2.0.3",
+    "lodash": "^4.17.21",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
+    "react-hook-form-mantine": "^3.1.3",
+    "react-resizable-panels": "^2.0.18",
+    "recharts": "^2.12.7",
+    "serialize-error": "^11.0.3",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@cspell/dict-es-es": "^2.4.0",
+    "@cspell/dict-pt-br": "^2.3.0",
+    "@cypress/code-coverage": "^3.12.30",
+    "@cypress/instrument-cra": "^1.4.0",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@types/node": "^20.11.30",
+    "@types/papaparse": "^5.3.14",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
+    "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "@vercel/style-guide": "^6.0.0",
+    "autoprefixer": "^10.4.19",
+    "cspell": "^8.6.0",
+    "cypress": "^13.7.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.15.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.38",
+    "postcss-preset-mantine": "^1.13.0",
+    "prettier": "^3.2.5",
+    "react-scripts": "^5.0.1",
+    "tailwind-blip-ds": "^1.0.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^4.9.5"
+  },
+  "cspell": {
+    "import": [
+      "@cspell/dict-pt-br/cspell-ext.json",
+      "@cspell/dict-es-es/cspell-ext.json"
+    ],
+    "language": "en,es,pt,pt_BR",
+    "ignorePaths": [
+      "node_modules",
+      "build",
+      "dist",
+      ".vscode",
+      "coverage",
+      "azure-pipelines.yml",
+      "public",
+      "charts",
+      "cypress/fixtures"
+    ],
+    "words": [
+      "aeiou",
+      "appsettings",
+      "autosize",
+      "Autosize",
+      "chatbots",
+      "classname",
+      "clsx",
+      "combobox",
+      "commitlint",
+      "cooldown",
+      "datetime",
+      "datetimeoffset",
+      "dayjs",
+      "degit",
+      "enrutador",
+      "Enrutador",
+      "firefox",
+      "fontsource",
+      "Fontsource",
+      "Heloi",
+      "heloineto",
+      "hookform",
+      "hsla",
+      "iframe",
+      "lcov",
+      "mantine",
+      "microlink",
+      "msging",
+      "Neto",
+      "nginx",
+      "nunito",
+      "Nunito",
+      "papaparse",
+      "prestart",
+      "querybuilder",
+      "scroller",
+      "startswith",
+      "subbots",
+      "substringof",
+      "tabler",
+      "tailwindcss",
+      "takenet",
+      "tanstack",
+      "typst",
+      "ungroup",
+      "unparse",
+      "uuidv"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {},
+      "postcss-preset-mantine": {},
+      "postcss-simple-vars": {
+        "variables": {
+          "mantine-breakpoint-xs": "36em",
+          "mantine-breakpoint-sm": "48em",
+          "mantine-breakpoint-md": "62em",
+          "mantine-breakpoint-lg": "75em",
+          "mantine-breakpoint-xl": "88em"
+        }
+      }
+    }
+  }
+}

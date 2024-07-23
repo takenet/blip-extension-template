@@ -1,0 +1,22 @@
+.root {
+  flex: 1;
+  display: grid;
+  --ag-font-family: unset;
+  --ag-background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+  --ag-header-background-color: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-6)
+  );
+}
+
+.table > div[role='presentation'] {
+  border-radius: unset;
+  border-style: none;
+}
+
+.ag-horizontal-right-spacer.ag-scroller-corner {
+  background-color: #e0e0e0;
+}

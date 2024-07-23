@@ -1,0 +1,27 @@
+@import url('../blip-ds.css');
+
+.mantine-ActionIcon-root[data-variant='secondary'] {
+  background-color: transparent;
+}
+
+.mantine-ActionIcon-root[data-variant='tertiary'] {
+  background-color: transparent;
+  border: 1px solid hsl(var(--color-gray-200));
+  color: hsl(var(--color-gray-800));
+}
+
+.mantine-ActionIcon-root[data-variant='tertiary']:hover {
+  background-color: hsl(var(--color-gray-100));
+}
+
+.mantine-ActionIcon-root[data-variant='tertiary']:active {
+  background-color: hsl(var(--color-gray-200));
+  border: 1px solid hsl(var(--color-gray-300));
+}
+
+html[data-mantine-color-scheme='dark']
+  .mantine-ActionIcon-root[data-variant='tertiary'] {
+  background-color: transparent;
+  border: 1px solid hsl(var(--color-gray-900));
+  color: white;
+}
