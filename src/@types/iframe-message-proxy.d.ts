@@ -12,7 +12,9 @@ type EventAction =
   | 'getApplication'
   | 'hasPermissions'
   | 'getPermissionsObject'
-  | 'segment';
+  | 'segment'
+  // eslint-disable-next-line @typescript-eslint/ban-types --- This allows for literal string union autocomplete
+  | (string & {});
 
 interface Message {
   action: EventAction;
